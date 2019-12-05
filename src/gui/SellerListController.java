@@ -30,7 +30,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.entities.Department;
 import model.entities.Seller;
 import model.service.SellerService;
 
@@ -70,13 +69,7 @@ public class SellerListController implements Initializable, DataChangeListener {
 	@FXML
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
-		Integer id = null;
-		String name = null;
-		String email = null;
-		Date birthDate = null;
-		Double baseSalary = null;
-		Department department = null;
-		Seller obj = new Seller(id, name, email, birthDate, baseSalary, department);
+		Seller obj = new Seller(0, null, null, null, null, null);
 		createDialogForm(obj, "/gui/SellerForm.fxml", parentStage);
 	}
 
